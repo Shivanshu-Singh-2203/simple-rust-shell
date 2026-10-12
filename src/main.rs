@@ -8,7 +8,7 @@ fn check_type_command(tokens: Vec<&str>) {
                                 println!("{} is a shell builtin", tokens[i]);
                         }
                         _ => {
-                                println!("{}: command not found", tokens[i]);
+                                println!("{}: not found", tokens[i]);
                         }
                 }
         }
