@@ -2,11 +2,23 @@
 use std::io::{self, Write};
 
 fn main() {
-        while true {
-                let mut command = String::new();
+        loop {
                 print!("$ ");
                 io::stdout().flush().unwrap();
-                io::stdin().read_line(&mut command).unwrap();
-                println!("{}: command not found", command.trim());
+                let mut commands = String::new();
+                io::stdin().read_line(&mut commands).unwrap();
+
+                match commands.trim() {
+                        "exit" => {
+                                break;
+                        }
+                        a => {
+                                if a.len() > 0 {
+                                        println!("{a}: command not found");
+                                } else {
+                                        break;
+                                }
+                        }
+                }
         }
 }
