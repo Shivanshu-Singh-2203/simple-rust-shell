@@ -6,5 +6,5 @@ fn main() {
         print!("$ ");
         io::stdout().flush().unwrap();
         io::stdin().read_line(&mut command).unwrap();
-        println!("{command} : command not found")
+        println!("{}: command not found", command.trim());
 }
